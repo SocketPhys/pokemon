@@ -1,0 +1,41 @@
+<head>
+  <title>Todo List</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <button type="button" class="remove">Remove all!</button>
+      <h1>Todo List</h1>
+
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+    </header>
+  {{#each image}}
+        {{> images}}
+      {{/each}}
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+   
+
+    <span class="text">{{text}}</span>
+  </li>
+</template>
+
+<template name = "images">
+   <img src = {{url}} >
+</template>
